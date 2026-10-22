@@ -1,0 +1,131 @@
+/* ===== Palette ===== */
+:root{
+  --wine:#3a0d1c; --plum:#1d0710; --burgundy:#6b1530; --rose:#c2365a;
+  --blush:#f6d5dc; --ivory:#fbf3e6; --gold:#c9a45c;
+  --serif:"Cormorant Garamond","Tiro Devanagari Hindi",Georgia,"Times New Roman",serif;
+  --body:"Lora","Noto Serif Devanagari",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100dvh;color:var(--ivory);font:400 1.05rem/1.75 var(--body);
+  background:radial-gradient(120% 80% at 50% 0%,var(--burgundy),var(--wine) 55%,var(--plum));
+  background-attachment:fixed;overflow-x:hidden}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+/* ===== Top bar ===== */
+.topbar{position:fixed;top:0;left:0;right:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem 1rem;background:linear-gradient(var(--plum),transparent)}
+#progress{display:flex;gap:.45rem;list-style:none;margin:0;padding:0}
+#progress li{width:1.6rem;height:4px;border-radius:4px;background:rgba(251,243,230,.2);transition:background .5s}
+#progress li.done{background:var(--gold)}
+.link-btn{background:none;border:0;color:var(--blush);font:inherit;font-size:.85rem;text-decoration:underline;
+  text-underline-offset:4px;cursor:pointer;padding:.5rem}
+
+/* ===== Screens ===== */
+main{position:relative;z-index:2;max-width:640px;margin:0 auto}
+.screen{min-height:100dvh;padding:5rem 1.5rem 3rem;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;gap:1.1rem}
+.screen[hidden]{display:none}
+.screen.active{animation:enter .9s ease both}
+@keyframes enter{from{opacity:0;transform:translateY(18px) scale(.98);filter:blur(6px)}to{opacity:1;transform:none;filter:none}}
+h1,h2{font:600 clamp(2rem,8vw,3rem)/1.15 var(--serif);margin:0;color:var(--blush);text-shadow:0 0 28px rgba(194,54,90,.55)}
+h1:focus,h2:focus{outline:none}
+p{margin:0;max-width:34em}
+.lead{font-size:1.12rem;color:var(--ivory)}
+.label{font:italic 500 1.15rem var(--serif);color:var(--gold);letter-spacing:.02em}
+.label strong{font-weight:600}
+
+/* ===== Buttons ===== */
+.btn{margin-top:.8rem;padding:.95rem 1.8rem;border-radius:999px;border:1px solid var(--gold);cursor:pointer;
+  font:500 1rem var(--body);color:var(--wine);background:linear-gradient(135deg,#e9cf97,var(--gold));
+  box-shadow:0 6px 26px rgba(201,164,92,.28);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 32px rgba(201,164,92,.4)}
+.btn:active{transform:scale(.97)}
+
+/* ===== Hearts (pure CSS, sized by font-size) ===== */
+.hs{position:relative;display:block;width:1em;height:1em;background:var(--rose);transform:rotate(-45deg)}
+.hs::before,.hs::after{content:"";position:absolute;width:1em;height:1em;background:var(--rose);border-radius:50%}
+.hs::before{top:-.5em;left:0}
+.hs::after{left:.5em;top:0}
+.big-heart{font-size:4.5rem;padding:1.4rem;filter:drop-shadow(0 0 22px rgba(194,54,90,.8));animation:beat 1.8s ease-in-out infinite}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.14)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+.big-heart.glow{font-size:5.5rem}
+
+/* ===== Shayari / text blocks ===== */
+.shayari{margin:.4rem 0;padding:1.1rem 1.3rem;max-width:30em;text-align:center;font:italic 500 1.3rem/1.6 var(--serif);
+  color:var(--blush);border-top:1px solid rgba(201,164,92,.5);border-bottom:1px solid rgba(201,164,92,.5)}
+.win{font:italic 600 1.45rem/1.45 var(--serif);color:var(--gold)}
+
+/* ===== Cards ===== */
+.cards{width:100%;display:flex;flex-direction:column;gap:.8rem;text-align:left}
+.card{border:1px solid rgba(201,164,92,.45);border-radius:14px;background:rgba(29,7,16,.55);overflow:hidden}
+.card-head{width:100%;text-align:left;padding:1rem 3rem 1rem 1.1rem;background:none;border:0;color:var(--blush);
+  font:600 1.2rem/1.3 var(--serif);cursor:pointer;position:relative}
+.card-head::after{content:"+";position:absolute;right:1.1rem;top:50%;transform:translateY(-50%);color:var(--gold);font-size:1.5rem;transition:transform .3s}
+.card-head[aria-expanded="true"]::after{transform:translateY(-50%) rotate(45deg)}
+.card-body{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s ease}
+.card-body>div{overflow:hidden;padding:0 1.1rem}
+.card-body.open{grid-template-rows:1fr}
+.card-body.open>div{padding-bottom:1rem}
+.card-body p+p{margin-top:.8rem}
+
+/* ===== Game ===== */
+#game{position:relative;width:100%;height:min(52vh,340px);border:1px dashed rgba(201,164,92,.45);border-radius:18px;background:rgba(29,7,16,.35)}
+.pick{position:absolute;width:64px;height:64px;border:0;background:none;cursor:pointer;display:grid;place-items:center;
+  font-size:2rem;color:var(--rose);animation:bob 3s ease-in-out infinite;filter:drop-shadow(0 0 10px rgba(194,54,90,.8))}
+.pick .hs{transform:translate(-.1em,.1em) rotate(-45deg)}
+.pick.got{animation:pop .6s ease forwards;pointer-events:none}
+@keyframes bob{50%{transform:translateY(-8px)}}
+@keyframes pop{40%{transform:scale(1.6);opacity:1}100%{transform:scale(0) translateY(-40px);opacity:0}}
+.game-msg{min-height:3.4em;font:italic 500 1.25rem/1.4 var(--serif);color:var(--blush)}
+
+/* ===== Envelope ===== */
+.envelope{position:relative;width:min(300px,80vw);height:190px;border:0;background:none;cursor:pointer;margin:1rem 0;perspective:900px}
+.envelope span{position:absolute;display:block}
+.env-back{inset:0;background:#8a1f3e;border-radius:8px;box-shadow:0 14px 40px rgba(0,0,0,.5)}
+.env-paper{left:6%;right:6%;top:8%;height:80%;background:var(--ivory);border-radius:4px;transition:transform .8s .35s ease}
+.env-front{inset:0;border-radius:8px;background:
+  linear-gradient(to top right,transparent 49.5%,#a12a4b 50%) 0 0/50% 100% no-repeat,
+  linear-gradient(to top left,transparent 49.5%,#a12a4b 50%) 100% 0/50% 100% no-repeat;
+  clip-path:polygon(0 0,50% 55%,100% 0,100% 100%,0 100%)}
+.env-flap{left:0;right:0;top:0;height:58%;background:#b73259;clip-path:polygon(0 0,100% 0,50% 100%);
+  transform-origin:top;transition:transform .7s ease;backface-visibility:visible}
+.env-seal{left:50%;top:50%;width:1.6rem;height:1.6rem;font-size:1.2rem;transform:translate(-50%,-50%);display:grid!important;place-items:center;
+  border-radius:50%;background:var(--gold);transition:opacity .4s;z-index:3}
+.env-seal .hs{background:var(--burgundy);transform:translateY(-1px) rotate(-45deg);font-size:.8rem}
+.env-seal .hs::before,.env-seal .hs::after{background:var(--burgundy)}
+.envelope[aria-expanded="true"] .env-flap{transform:rotateX(180deg)}
+.envelope[aria-expanded="true"] .env-paper{transform:translateY(-34px)}
+.envelope[aria-expanded="true"] .env-seal{opacity:0}
+
+/* ===== Letter ===== */
+.letter{width:100%;padding:1.8rem 1.4rem;border-radius:6px;text-align:left;color:#3a1420;
+  background:linear-gradient(var(--ivory),#f3e4cc);box-shadow:0 18px 50px rgba(0,0,0,.45);animation:enter .9s both;display:flex;flex-direction:column;gap:1rem;align-items:stretch}
+.letter[hidden]{display:none}
+.letter .salute{font:600 1.7rem var(--serif);color:var(--burgundy)}
+.letter .shayari{color:var(--burgundy);font-size:1.2rem;border-color:rgba(107,21,48,.35);align-self:center}
+.letter .sign{font:italic 600 1.35rem var(--serif);color:var(--burgundy);text-align:right}
+.letter .btn{align-self:center}
+
+/* ===== Final ===== */
+.hug{font:italic 600 1.35rem/1.5 var(--serif);color:var(--blush);animation:enter .8s both}
+.hug[hidden],.note[hidden],.win[hidden]{display:none}
+.actions{display:flex;gap:1.2rem;margin-top:.6rem}
+.note{font-size:.9rem;color:var(--gold)}
+
+/* ===== Background particles ===== */
+#bg{position:fixed;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.fl{position:absolute;bottom:-40px;opacity:0;animation:rise linear infinite}
+.fl.h{color:var(--rose)}
+.fl.h .hs{background:currentColor}.fl.h .hs::before,.fl.h .hs::after{background:currentColor}
+.fl.s{width:10px;height:10px;background:var(--gold);clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%)}
+@keyframes rise{10%{opacity:.7}90%{opacity:.5}100%{transform:translateY(-110vh) translateX(var(--dx));opacity:0}}
+.burst{position:fixed;z-index:20;pointer-events:none;font-size:1.2rem;animation:burst 1.4s ease-out forwards}
+.burst .hs{background:var(--rose)}.burst .hs::before,.burst .hs::after{background:var(--rose)}
+@keyframes burst{to{transform:translate(var(--bx),var(--by));opacity:0}}
+
+@media (min-width:700px){.screen{padding-top:6rem}}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  #bg{display:none}
+}

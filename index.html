@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="hi-Latn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#3a0d1c">
+  <title>Sirf aapke liye ❤️</title>
+  <!-- Fonts load from Google if online; system fonts are used as fallback. No images anywhere. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="bg" aria-hidden="true"></div>
+
+  <header class="topbar">
+    <ol id="progress" aria-label="Surprise progress">
+      <li></li><li></li><li></li><li></li><li></li><li></li>
+    </ol>
+    <button type="button" class="link-btn" id="restart-top">Phir se shuru</button>
+  </header>
+
+  <main>
+    <!-- SCREEN 1 -->
+    <section class="screen active" aria-labelledby="h1">
+      <p class="label">A little something, just for you</p>
+      <h1 id="h1" tabindex="-1">Toh janaab abhi bhi gussa hain? 🥺❤️</h1>
+      <p class="lead">Pata hai aap mujhse naraaz hain… par aaj bas ek baar, bina kuch kahe, meri feelings ko mehsoos karna.</p>
+      <div class="big-heart" aria-hidden="true"><span class="hs"></span></div>
+      <button type="button" class="btn" data-next>Sirf aapke liye, jaan ❤️</button>
+    </section>
+
+    <!-- SCREEN 2 -->
+    <section class="screen" hidden aria-labelledby="h2">
+      <p class="label">जो ज़ुबान तक नहीं आया</p>
+      <h2 id="h2" tabindex="-1">Mere dil ki kuch baatein…</h2>
+      <p>Jaan, main jaanti hoon ki main hamesha us tarah pyaar zaahir nahi kar paati jaise aap umeed karte ho. Par iska matlab yeh bilkul nahi ki aap mere liye important nahi ho.</p>
+      <p>Mujhe samajh aata hai ki pyaar sirf “I love you” bol dene se nahi hota. Woh waqt dene mein hota hai, dhyaan dene mein, reassurance mein, sach bolne mein, aur har baar koshish karne mein. Aur in sab mein main aur behtar hona chahti hoon.</p>
+      <blockquote class="shayari">
+        Mohabbat sirf keh dene se nahi, nibhaane se dikhti hai,<br>
+        Aur meri kuch baaton mein shayad woh nibhaana reh gaya…<br>
+        Dil mein aapki jagah kabhi kam nahi hui, jaan,<br>
+        Bas aap tak use pahunchaana reh gaya.
+      </blockquote>
+      <button type="button" class="btn" data-next>Ek baat aur sunoge, baby?</button>
+    </section>
+
+    <!-- SCREEN 3 -->
+    <section class="screen" hidden aria-labelledby="h3">
+      <p class="label">Tap karke padho</p>
+      <h2 id="h3" tabindex="-1">Aapki har baat mere liye important hai.</h2>
+      <div class="cards">
+        <div class="card">
+          <button type="button" class="card-head" aria-expanded="false" aria-controls="p1" id="b1">Jab aapko lagta hai ki main aapse pyaar nahi karti…</button>
+          <div class="card-body" id="p1" role="region" aria-labelledby="b1"><div><p>Aisa lagna aapke liye bahut dukh wali baat hai, Sona, aur main ise halke mein nahi leti. Pyaar sirf dil mein hone ki cheez nahi, mehsoos hone ki cheez bhi hai. Agar aap mehsoos nahi kar paa rahe, toh yeh meri kami hai, aapki galti nahi.</p><p>Main chahti hoon ki aap ko meri baaton se, meri koshishon se, aur mere time se feel ho ki aap valued ho. Aur main yeh sirf kehne ke liye nahi, karke dikhane ke liye seekhna chahti hoon.</p></div></div>
+        </div>
+        <div class="card">
+          <button type="button" class="card-head" aria-expanded="false" aria-controls="p2" id="b2">Jab main aapko mana nahi paati…</button>
+          <div class="card-body" id="p2" role="region" aria-labelledby="b2"><div><p>Kabhi-kabhi ladai ke baad mujhe samajh hi nahi aata ki kahan se shuru karun. Main chup ho jaati hoon, aur woh chuppi aapko berukhi lagti hai. Mujhe pata hai ki us waqt aap akele aur andekhe mehsoos karte ho.</p><p>Main nahi chahti ki meri khamoshi, mera ego, ya meri jhijhak aapko yeh sochne par majboor kare ki mujhe parwah nahi. Agli baar, main pehla kadam lene ki koshish karungi, chahe bas ek “sorry, baat karein?” hi kyun na ho.</p></div></div>
+        </div>
+        <div class="card">
+          <button type="button" class="card-head" aria-expanded="false" aria-controls="p3" id="b3">Jab main aapse sab kuch share nahi karti…</button>
+          <div class="card-body" id="p3" role="region" aria-labelledby="b3"><div><p>Mujhe kai baar apni hi feelings ke liye words nahi milte, aur isiliye main unhe andar hi rakh leti hoon. Par aap mere sabse apne ho, Bubu, aur aap ka haq hai ki mere din, meri chintayein aur meri chhoti-chhoti khushiyan jaano.</p><p>Main dheere-dheere khulna chahti hoon. Ek-ek baat, ek-ek din. Taaki aapko kabhi mere dil ka rasta anjaana na lage.</p></div></div>
+        </div>
+      </div>
+      <button type="button" class="btn" data-next>Ab ek chhota sa kaam karoge? ❤️</button>
+    </section>
+
+    <!-- SCREEN 4 -->
+    <section class="screen" hidden aria-labelledby="h4">
+      <p class="label">Dil collect karo: <strong id="count">0</strong> / 5</p>
+      <h2 id="h4" tabindex="-1">Pehle mere liye 5 dil collect karo, jaan.</h2>
+      <div id="game" aria-label="Heart game area"></div>
+      <p id="game-msg" class="game-msg" aria-live="polite">Kisi bhi dil ko tap karo.</p>
+      <p id="game-win" class="win" hidden>Saare dil aapke… aur mera bhi. ❤️</p>
+      <button type="button" class="btn" id="game-next" data-next hidden>Aage chalo, baby</button>
+    </section>
+
+    <!-- SCREEN 5 -->
+    <section class="screen" hidden aria-labelledby="h5">
+      <p class="label">Envelope tap karo</p>
+      <h2 id="h5" tabindex="-1">Aapke naam ek chhota sa khat…</h2>
+      <button type="button" id="envelope" class="envelope" aria-expanded="false" aria-controls="letter" aria-label="Khat kholo">
+        <span class="env-back"></span>
+        <span class="env-paper"></span>
+        <span class="env-front"></span>
+        <span class="env-flap"></span>
+        <span class="env-seal"><span class="hs"></span></span>
+      </button>
+      <article id="letter" class="letter" hidden>
+        <p class="salute">Mere jaan, mere baby…</p>
+        <p>Main jaanti hoon ki kabhi-kabhi meri baaton aur mere behaviour ne aapko hurt kiya hai. Jab ladai ke baad main sahi tarah se aapko mana nahi paati, ya chup ho jaati hoon, toh aapko lagta hai ki aap mere liye utne zaroori nahi. Aapka aisa mehsoos karna mujhe ab samajh aata hai, Sona, aur main ise chhota nahi karungi.</p>
+        <blockquote class="shayari">Lafzon ki thi kami, mohabbat ki nahi,<br>Meri khamoshi ko aapne berukhi samjha.<br>Dil mein toh aap hamesha rahe, jaan,<br>Bas main use sahi tarah kehna na seekh saki.</blockquote>
+        <p>Main kabhi nahi chahti ki aap is rishte mein akela mehsoos karo. Mujhe har baar sahi words nahi milte, par main seekhna chahti hoon. Apni baatein, apne darr, aur apne din ki chhoti-chhoti kahaniyan aapse zyada share karna chahti hoon.</p>
+        <blockquote class="shayari">Kehna bahut kuch tha, par kehna aaya nahi,<br>Jo dil mein tha, woh zubaan par laaya nahi.<br>Ab chhoti-chhoti baaton se shuru karungi, Betu,<br>Taaki mera dil aapko anjaana na lage.</blockquote>
+        <p>Mujhe pata hai ki ek website bana dene se sab theek nahi ho jaata, aur main yeh umeed bhi nahi karti ki aap abhi maaf kar do. Gussa rehna aapka haq hai. Main bas itna chahti hoon ki aap meri baat sunein, aur mujhe waqt dein ki main apni actions se woh sab dikha sakun jo shabdon mein kam pad jaata hai.</p>
+        <blockquote class="shayari">Waada nahi, bas ek koshish roz karungi,<br>Aapko aapki ahmiyat roz batati rahungi.<br>Aap mere liye bahut zaroori ho, Bubu,<br>Yeh baat sirf kahungi nahi, nibhaungi.</blockquote>
+        <p>Main aapko sunna chahti hoon, aapko samajhna chahti hoon, aur lagataar koshish karna chahti hoon. Aap mere liye important ho, aur main nahi chahti ki meri galtiyon ki wajah se aap ek pal ke liye bhi isme shak karo.</p>
+        <p class="sign">Aapki hi, hamesha pyaar karne wali… ❤️</p>
+        <button type="button" class="btn" data-next>Ek last baat…</button>
+      </article>
+    </section>
+
+    <!-- SCREEN 6 -->
+    <section class="screen final" hidden aria-labelledby="h6">
+      <div class="big-heart glow" aria-hidden="true"><span class="hs"></span></div>
+      <h2 id="h6" tabindex="-1">Ek last baat, mere bubu… ❤️</h2>
+      <p>Main nahi chahti ki hamara rishta is baat ka ho ki ladai mein kaun jeeta. Main chahti hoon ki hum ek doosre ko samjhein, achhe se baat karein, aur izzat aur pyaar ke saath baar-baar ek doosre ko chunein.</p>
+      <blockquote class="shayari">Jeetna-haarna toh bas ek khel hai,<br>Humein toh bas ek doosre ko samajhna hai.<br>Ladai ho bhi jaaye toh kya, jaan,<br>Har baar humein ek doosre ke paas hi lautna hai.</blockquote>
+      <p class="win">I love you, mere jaan. Aaj bhi, kal bhi, aur har us din jab hum ek doosre ko aur behtar samajhna seekhenge. ❤️</p>
+      <button type="button" class="btn" id="hug-btn">Ek virtual hug le lo 🤗</button>
+      <p id="hug-msg" class="hug" hidden aria-live="polite">Idhar aao, jaan… ek tight sa hug. Abhi bhi gussa rehna hai toh reh lo, par meri baat sunne ke liye thank you. Aap mere liye bahut special ho. ❤️</p>
+      <div class="actions">
+        <button type="button" class="link-btn" id="share-btn">Share this surprise</button>
+        <button type="button" class="link-btn" id="restart-end">Phir se dekho</button>
+      </div>
+      <p id="share-note" class="note" hidden></p>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
